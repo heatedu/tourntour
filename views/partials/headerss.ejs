@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- //ADDED DATA -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+		<title>TOUR4GOOD</title>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+		<!-- //ADDED DATA -->
+		 <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous">  -->
+		<link rel="stylesheet" href="/stylesheets/styling.css"> 
+	</head>
+	<body style="background:#3A3C3E">
+		
+		<nav class="navbar navbar-default" style = "float:right">
+			<div class="container-fluid">
+				<!-- <div class="navbar-header">
+					<a class="navbar-brand" href = "/">TOUR4GOOD</a>
+				</div> -->
+				<ul class="nav navbar-nav navbar-right" style = "flex-direction:row">
+				<a href="/about"><li style = "margin:auto 20px; color: RoyalBlue">About</li></a>
+				<%	if(!currentuser) { %>
+						<a href = "/login"><li style = "margin:auto 20px; color: RoyalBlue">Login</li></a>
+						<a href = "/register"><li style = "margin:auto 20px; color: RoyalBlue">Sign Up</li></a>
+				<%	} else { %>
+						<a href="#"><li style = "margin:auto 20px; color: RoyalBlue">Signed In As <%= currentuser.username %></li></a>
+						<a href="/logout"><li style = "margin:auto 20px; color: RoyalBlue">Logout</li></a>
+				<%	} %> 
+				</ul>
+			</div>
+		</nav>
+		
+		
+	
+
+		
+	<div class="container" >
+		<div class="row ">
+	<div class="page-wrapper chiller-theme toggled col-5">
+		
+		
+	  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+		<i class="fas fa-bars"></i>
+	  </a>
+	  <nav id="sidebar" class="sidebar-wrapper">
+		<div class="sidebar-content">
+		  <div class="sidebar-brand">
+			<div class="center" style="margin-left: 10px">
+				<h2><a href="/">TOUR4GOOD</a></h2>
+			  </div>
+			<div id="close-sidebar">
+			  <!-- <i class="fas fa-times"></i> -->
+			</div>
+		  </div>
+		  <!-- sidebar-search  -->
+		  <div class="sidebar-menu">
+				<ul>
+				  <li class="header-menu">
+					<div id="heading">
+					  <span><a href="/result">Major Tourist Cities of India</a></span>
+					</div>
+				  </li>
+				  <li>
+					<a href="/result/Jaipur">
+					  <div class="text-center">Jaipur</div>
+					</a>
+				  </li>
+				  <li>
+					<a href="/result/Bombay">
+					  <div class="text-center">Bombay</div>
+					</a>
+				  </li>
+				  <li>
+					<a href="/result/Udaipur">
+					  <div class="text-center">Udaipur</div>
+					</a>
+				  </li>
+				  <li>
+					<a href="/result/Amritsar">
+					  <div class="text-center">Amritsar</div>
+					</a>
+				  </li>
+				  <li>
+					<a href="/result/Mysore">
+					  <div class="text-center">Mysore</div>
+					</a>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+		</nav>
+	</div>
+		
+		
+
+		
+		

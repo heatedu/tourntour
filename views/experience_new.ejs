@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+
+<main class="page-content">
+    <div class="container-fluid">
+		<div class="content container" style="margin-top: 30px">
+		<div class="row text-center" style="display:flex; flex-wrap: wrap">
+			<div class="col-md-0 col-sm-10">
+			<h1 style="text-align:center; color: Coral; padding-left:120px">Add your Experience To <%= data.name%> , <%=data.location %></h1>
+
+			<div style="width: 30%; margin: 30px auto; ">
+				<form action="/result/<%= data._id %>/experience" method="POST">
+					<div class="form-group">
+						<textarea class="form-control" style="height:150px; width:350px" type="text" name="experience[text]" placeholder="Your Experience........"></textarea>
+					</div>
+					<div>
+						<input class="form-control" required type="text" name="experience[image]" placeholder="Image URL" style="margin-bottom: 15px; width: 350px">
+					</div>
+					<div class="form-group">
+						<button class="btn btn-lg btn-info btn-block" style="width: 350px">Submit</button>
+					</div>
+				</form>
+				<div style="text-align: left ; font-size: 18px">
+					<a href="/result/<%= data.location %>/<%= data.name %>">Go Back</a>
+				</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+<%- include("partials/footer") %>

@@ -1,0 +1,22 @@
+<%- include("partials/header") %>
+		  <div  style="text-align:center">
+			<h1 style="text-transform:uppercase;">WELCOME TO <%= data[0].location %></h1>
+		</div>
+		<div class="row text-center" style="display:flex; flex-wrap: wrap;" class="justify-content-center">
+			<% data.forEach(function(place) { %>
+				<div class="container col-lg-4 col-md-4 col-sm-6 img-thumbnail" >
+					<div>
+						<img class="img-thumbnail" style="height:250px" src= "<%= place.image %>">
+						<div class="caption">
+							<h4><%= place.name %></h4>
+						</div>
+						<p>
+						   <a href="/result/<%= place.location %>/<%= place.name  %>" class="btn btn-info">More Info</a>
+						</p>
+					</div>
+				</div>
+			<% }); %>
+		</div>
+      </div>
+	</div>
+<%- include("partials/footer") %>

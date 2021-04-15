@@ -1,0 +1,26 @@
+<%- include("partials/test-header") %>
+
+	<div class="row">
+        <div class="container-fluid">
+			<div class="row text-center d-inline-flex ">
+				<% data.forEach(function(place) { %>
+					<div class="container col-lg-4 col-md-4 col-sm-6 img-thumbnail ">
+						<div class="thumbnail">
+							<img class="img-responsive img-thumbnail" src= "<%= place.image %>">
+							<div class="caption">
+								<h4><%= place.name %></h4>
+							</div>
+							<p>
+								<a href="/result/<%= place.location %>/<%= place.name  %>" class="btn btn-primary">More Info</a>
+							</p>
+						</div>
+					</div>
+				<% }); %>
+			</div>
+		</div>
+    </div>
+</div>
+</div>
+
+
+<%- include("partials/footer") %>

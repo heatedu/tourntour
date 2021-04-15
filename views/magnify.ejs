@@ -1,0 +1,51 @@
+<%- include("partials/header") %>
+
+
+	  
+<div  style="text-align:center">
+        <h1 style="text-transform:uppercase;">WELCOME TO <%=data[0].name%> , <%=data[0].location%></h1>
+    </div>
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;" class="justify-content-center">
+        <% data.forEach(function(touristplace) { %>
+            <div class="card card-body">
+                <img style="width: 65%; height: 400px" src= "<%= touristplace.image %>" class="img-thumbnail mx-auto" >
+                <div class="caption">
+                    <h4><%= touristplace.name %></h4>
+                </div>
+                <% if(!currentuser){ %>
+						<p><a href="/user" class="btn btn-info">Add Your Experience</a></p>
+                <% } else { %>
+                    <div class="card-body">
+                        <p class="center"><a href="/result/<%= touristplace._id%>/experience/new" class="btn btn-info">Add                            Your Experience</a>
+                        </p>
+                    </div>
+                <% } %>
+            </div>
+        <% }); %>
+	
+		
+	
+         <div class="card card-body">
+            <h4><strong>EXPERIENCES =></strong></h4>
+                <% data.forEach(function(touristplace){ %>
+                    <% touristplace.experiences.forEach(function(experience){ %>
+                        <div class="card card-body text-left">
+                                <div class="row">
+                                    <div class="col-5"  >
+                                        <img style="width: 429px ; height : 300px" class="img-thumbnail " src="<%=                                                      experience.image %>" alt="Image Not Available">
+                                    </div>
+                                    <div class="col-7 align-self-end " style="width:60% ; ">
+                                        <h6>Review =></h6>
+                                        <strong><p style="margin-bottom:5px"><%= experience.text %></p></strong>
+                                        <i><em>By => <%= experience.author %></em></i>
+                                    </div>
+                                </div>
+                            </div>
+                <% }); %>
+            <% }); %>
+        
+        </div>
+
+	
+
+<%- include("partials/footer") %>
